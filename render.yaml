@@ -1,0 +1,74 @@
+# Blueprint de Render: API (Django) + front (estático) + PostgreSQL, todo en plan free.
+# Render > New > Blueprint > este repo. Al crearlo pide las variables marcadas con sync: false.
+#
+# El front reenvía /api/* a la API (rewrite): para el navegador todo es el mismo dominio, igual
+# que con el proxy de Vite en desarrollo. Así las cookies de sesión son propias (Safari bloquea
+# las de terceros) y el front no necesita VITE_API_URL.
+# Si Render asigna a la API otra URL (p. ej. porque "oiga-api" ya está cogido), cambia el destino.
+
+databases:
+  - name: oiga-db
+    plan: free  # OJO: en plan free la BD caduca a los 30 días; pásala a pago antes de tener datos reales
+    postgresMajorVersion: "17"  # la misma que docker-compose.yml
+    databaseName: oiga
+    user: oiga
+
+services:
+  - type: web
+    name: oiga-api
+    runtime: python
+    plan: free  # se duerme tras 15 min sin tráfico: la primera petición tarda ~1 min
+    rootDir: backend
+    # En plan free no hay preDeployCommand: las migraciones van en el build
+    buildCommand: >-
+      pip install -r requirements.txt
+      && python manage.py collectstatic --no-input
+      && python manage.py migrate --no-input
+      && (python manage.py createsuperuser --no-input || true)
+    startCommand: gunicorn config.wsgi:application --workers 2 --timeout 60
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.14.7"
+      - key: DJANGO_DEBUG
+        value: "False"
+      - key: DJANGO_SECRET_KEY
+        generateValue: true
+      - key: DATABASE_URL
+        fromDatabase:
+          name: oiga-db
+          property: connectionString
+      - key: FRONTEND_URL
+        sync: false  # URL del front, p. ej. https://oiga.onrender.com
+      - key: GOOGLE_CLIENT_ID
+        sync: false
+      # Superusuario para /admin:
+      - key: DJANGO_SUPERUSER_USERNAME
+        sync: false
+      - key: DJANGO_SUPERUSER_PASSWORD
+        sync: false
+      - key: DJANGO_SUPERUSER_EMAIL
+        sync: false
+      - key: DJANGO_SUPERUSER_TELEFONO
+        sync: false
+      - key: DJANGO_SUPERUSER_DIRECCION
+        sync: false
+
+  - type: web
+    name: oiga
+    runtime: static
+    rootDir: frontend
+    buildCommand: npm ci && npm run build
+    staticPublishPath: dist
+    routes:
+      # El orden importa: primero la API, luego todo lo demás a la SPA (React Router)
+      - type: rewrite
+        source: /api/*
+        destination: https://oiga-api.onrender.com/api/*
+      - type: rewrite
+        source: /*
+        destination: /index.html
+    envVars:
+      - key: NODE_VERSION
+        value: "24"
+      - key: VITE_GOOGLE_CLIENT_ID
+        sync: false  # el mismo valor que GOOGLE_CLIENT_ID

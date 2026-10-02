@@ -1,0 +1,5 @@
+slug,nombre,descripcion,orden,activa
+platos-tipicos,Platos típicos,"Clásicos de la costa peruana, 100 % vegetales.",1,si
+acompanamientos,Acompañamientos,Para completar tu plato.,2,si
+postres,Postres,Dulces criollos sin lácteos ni huevo.,3,si
+bebidas,Bebidas,Refrescos y bebidas tradicionales.,4,si

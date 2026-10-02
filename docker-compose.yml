@@ -1,0 +1,26 @@
+# SOLO DESARROLLO: PostgreSQL local. En Render la base de datos la crea render.yaml.
+#   Arrancar:  docker compose up -d     (luego arranca solo con Docker Desktop)
+#   Parar:     docker compose stop
+#   Borrar BD: docker compose down -v   (se pierden los datos)
+name: oiga
+
+services:
+  db:
+    image: postgres:17-alpine  # misma versión mayor que en render.yaml
+    environment:
+      POSTGRES_DB: oiga
+      POSTGRES_USER: oiga
+      POSTGRES_PASSWORD: oiga
+    ports:
+      - "127.0.0.1:5432:5432"  # solo accesible desde este equipo
+    volumes:
+      - datos:/var/lib/postgresql/data
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U oiga -d oiga"]
+      interval: 5s
+      timeout: 3s
+      retries: 10
+
+volumes:
+  datos:

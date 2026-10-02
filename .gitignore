@@ -1,0 +1,29 @@
+# Secretos: nunca al repo (la plantilla es .env.example)
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+backend/staticfiles/
+
+# Bases de datos locales
+*.sqlite3
+*.sqlite3-journal
+
+# Node / Vite
+node_modules/
+dist/
+
+# Editores y sistema
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Claude Code: ajustes personales (launch.json sí se comparte)
+.claude/settings.local.json
+.claude

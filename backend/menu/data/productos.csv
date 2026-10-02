@@ -1,0 +1,25 @@
+slug,categoria,nombre,inspirado_en,descripcion,ingredientes,precio,orden
+ceviche-de-champinones,platos-tipicos,Ceviche de champiñones,Ceviche de pescado,"Champiñones marinados al momento en leche de tigre de limón y ají limo, con camote y choclo.","champiñones, limón, ají limo, cebolla roja, culantro, camote, choclo",32.90,1
+causa-limena,platos-tipicos,Causa limeña de garbanzo,Causa de atún,"Papa amarilla al ají amarillo rellena de 'atún' de garbanzo y palta.","papa amarilla, ají amarillo, limón, garbanzo, mayonesa vegana, palta",29.90,2
+aji-de-setas,platos-tipicos,Ají de setas,Ají de gallina,"Setas deshilachadas en crema de ají amarillo y pecanas, con arroz y papa.","setas, ají amarillo, pecanas, leche de soya, pan, arroz, papa amarilla, aceituna",36.90,3
+lomo-saltado,platos-tipicos,Lomo saltado de seitán,Lomo saltado,"Seitán salteado al wok con cebolla, tomate y sillao, con papas fritas y arroz.","seitán, cebolla roja, tomate, ají amarillo, sillao, vinagre, papa, arroz, culantro",38.50,4
+arroz-con-setas-nortena,platos-tipicos,Arroz con setas a la norteña,Arroz con pato,"Arroz verde al culantro y chicha de jora con setas doradas y salsa criolla.","arroz, culantro, chicha de jora, zapallo loche, setas, arvejas, pimiento",37.90,5
+seco-de-seitan,platos-tipicos,Seco de seitán con frejoles,Seco de res,"Seitán guisado al culantro y chicha de jora, con frejoles canarios y arroz.","seitán, culantro, chicha de jora, ají amarillo, zapallo loche, frejol canario, arroz",36.90,6
+jalea-de-setas,platos-tipicos,Jalea de setas y yuca,Jalea mixta,"Setas y yuca crocantes con salsa criolla y tártara vegana.","setas ostra, yuca, harina de trigo, cebolla roja, limón, mayonesa vegana",39.90,7
+papa-a-la-huancaina,platos-tipicos,Papa a la huancaína,Papa a la huancaína,"Papa sancochada bañada en crema de ají amarillo y castañas.","papa amarilla, ají amarillo, castañas, leche de soya, galleta de soda, aceituna",22.90,8
+camote-glaseado,acompanamientos,Camote glaseado,,"Camote horneado con miel de chancaca y canela.","camote, chancaca, canela",9.90,1
+choclo-desgranado,acompanamientos,Choclo desgranado,,"Choclo serrano sancochado.","choclo, sal",8.90,2
+cancha-serrana,acompanamientos,Cancha serrana,,"Maíz tostado crocante.","maíz chulpe, aceite vegetal, sal",6.90,3
+yuca-frita,acompanamientos,Yuca frita,,"Bastones de yuca dorados.","yuca, aceite vegetal, sal",9.90,4
+platano-frito,acompanamientos,Plátano frito,,"Plátano de la isla maduro y frito.","plátano de la isla, aceite vegetal",8.90,5
+arroz-blanco,acompanamientos,Arroz blanco,,"Arroz graneado con ajo.","arroz, ajo, aceite vegetal, sal",6.90,6
+salsa-criolla,acompanamientos,Salsa criolla,,"Cebolla roja, ají limo y limón.","cebolla roja, ají limo, limón, culantro",5.90,7
+suspiro-limeno-de-coco,postres,Suspiro limeño de coco,Suspiro a la limeña,"Manjar de leche de coco coronado con merengue de aquafaba al oporto.","leche de coco, azúcar, aquafaba, oporto, canela",15.90,1
+mazamorra-morada,postres,Mazamorra morada,,"Maíz morado espesado con frutas secas y especias.","maíz morado, piña, membrillo, guindones, canela, clavo, chuño",12.90,2
+arroz-con-leche-de-coco,postres,Arroz con leche de coco,Arroz con leche,"Arroz cremoso con leche de coco, canela y clavo.","arroz, leche de coco, azúcar, canela, clavo, pasas",12.90,3
+picarones,postres,Picarones,,"Buñuelos de zapallo y camote con miel de chancaca.","zapallo macre, camote, harina de trigo, levadura, chancaca, anís",16.90,4
+alfajores-de-maicena,postres,Alfajores de maicena,Alfajores,"Tapas de maicena rellenas de manjar de coco (2 unidades).","maicena, harina de trigo, mantequilla vegetal, manjar de coco, azúcar en polvo",7.90,5
+chicha-morada,bebidas,Chicha morada,,"Refresco de maíz morado con piña y especias (vaso de 500 ml).","maíz morado, piña, manzana, canela, clavo, limón",8.90,1
+maracuya,bebidas,Refresco de maracuyá,,"Vaso de 500 ml.","maracuyá, agua, azúcar rubia",8.90,2
+limonada-frozen,bebidas,Limonada frozen,,"Limonada con hielo frappé y hierbabuena.","limón, hielo, azúcar rubia, hierbabuena",9.90,3
+emoliente,bebidas,Emoliente,,"Bebida caliente de hierbas y cebada.","cebada, linaza, cola de caballo, alfalfa, limón",7.90,4
